@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 const Navbar = () => {
     return (
 
-        <nav className='relative z-50 flex w-full justify-between items-center p-6 '>
+        <nav className='relative z-50 flex w-full justify-between items-center  p-6 '>
             {/* logo and home button */}
             <div className="tracking-wider font-open text-lg text-[30px]">NEXORA</div>
             {/* nav button */}
@@ -18,7 +18,7 @@ const Navbar = () => {
 
                     {/*Dropdown Menu */}
                     <div className="
-                        absolute top-full left-0 mt-2 w-48 
+                        absolute top-full left-0 mt-2 w-60 
                         bg-slate-900/95 backdrop-blur-md 
                         border border-white/10 rounded-xl p-2 shadow-2xl
                         /* تأثير الظهور */
@@ -28,13 +28,13 @@ const Navbar = () => {
                         ">
                         <ul className="space-y-1">
                             <li className="px-4 py-2 hover:bg-green-400/20 hover:text-green-400 rounded-lg transition-colors duration-200">
-                                Web Development
+                                Software Development
                             </li>
                             <li className="px-4 py-2 hover:bg-green-400/20 hover:text-green-400 rounded-lg transition-colors duration-200">
-                                Mobile Apps
+                                IT Consultancy
                             </li>
                             <li className="px-4 py-2 hover:bg-green-400/20 hover:text-green-400 rounded-lg transition-colors duration-200">
-                                Cloud Services
+                                Business Automation
                             </li>
                         </ul>
                     </div>
