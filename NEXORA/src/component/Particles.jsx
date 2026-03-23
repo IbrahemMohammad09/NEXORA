@@ -38,9 +38,9 @@ export default function ConnectedDotsBackground() {
           }
         },
         particles: {
-          color: { value: "#22c55e" },
+          color: { value: "#0e6157" },
           links: {
-            color: "#22c55e",
+            color: "#94f6db",
             distance: 130,
             enable: true,
             opacity: 0.5,
@@ -53,7 +53,7 @@ export default function ConnectedDotsBackground() {
           },
           number: {
             density: { enable: true, area: 800 },
-            value: 70
+            value: 500
           },
           opacity: { value: 0.6 },
           shape: { type: "circle" },

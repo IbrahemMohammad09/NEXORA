@@ -1,106 +1,78 @@
 import React from 'react'
-import { MonitorCloud } from 'lucide-react';
-import { Network } from 'lucide-react'
-import { Cog } from 'lucide-react'
+import {  Network, Cog, Monitor, Laptop, LayoutGrid, Square  } from 'lucide-react'
 
-const Solutionscard = () => {
 
+const cardData = [
+  {
+    icon: <Monitor className='w-16 h-16' style={{ color: '#005649' }} />,
+    title: 'Software Development',
+    description: 'Custom software systems built for scalability and performance.',
+  },
+  {
+    icon: <Network className='w-16 h-16' style={{ color: '#005649' }} />,
+    title: 'IT Consultancy',
+    description: 'Technology consulting for digital transformation.',
+  },
+  {
+    icon: <Cog className='w-16 h-16' style={{ color: '#005649' }} />,
+    title: 'Business Automation',
+    description: 'Streamline operations through advanced automation solutions.',
+  },
+]
+
+const SolutionsCard = () => {
   return (
-    <div className='mb-8 flex flex-row'>
-
-      <div className="group relative p-[2px] rounded-2xl 
-        bg-gradient-to-r from-transparent to-transparent 
-        hover:from-green-400 hover:to-emerald-500
-        mx-4
-        transition-all duration-500 w-80">
-
-        <div className="flex flex-col items-center text-center p-8 rounded-2xl
-          bg-gradient-to-t from-slate-900/10 to-slate-900/95
-          transition-all duration-500
-          transform-gpu
-          group-hover:rotate-1
-          group-hover:scale-105
-          group-hover:-translate-y-2
-          group-hover:shadow-[0_0_40px_rgba(74,222,128,0.3)]"
+    <div className='mb-8 flex flex-row flex-wrap justify-center'>
+      {cardData.map((card, index) => (
+        <div
+          key={index}
+          className="group relative p-[1px] rounded-2xl 
+            bg-gradient-to-r from-blue-400/10 via-transparent to-blue-400/10 
+            mx-4 transition-all duration-1000 w-80 
+            hover:scale-[1.01] hover:-translate-y-2
+            hover:shadow-[0_0_50px_rgba(56,189,248,0.15)]"
         >
-          <MonitorCloud className='w-16 h-16 text-green-400' />
-          <h1 className="text-xl font-semibold text-white">
-            Software Development
-          </h1>
+          <div className="absolute inset-0 rounded-2xl transition-opacity duration-1000 opacity-0 group-hover:opacity-100 animate-meteor bg-gradient-to-r from-blue-400/20 via-blue-500/10 to-blue-400/20" />
 
-          <p className="text-gray-300 mt-2">
-            Custom software systems built for scalability and performance.
-          </p>
+          <div className="relative flex flex-col items-center text-center p-8 rounded-2xl
+              bg-slate-900/60 backdrop-blur-[1px]
+              border border-white/5
+              transition-all duration-500 ease-out
+              transform-gpu"
+          >
+            {card.icon}
+            <h1 className="text-xl font-semibold text-white mt-4 transition-colors group-hover:text-blue-300">
+              {card.title}
+            </h1>
 
-          <button className="mt-8 text-lg px-6 py-1 border-2 transition-all duration-300 rounded-lg border-green-400 text-white bg-gradient-to-t from-green-400/10 to-green-400/40 hover:bg-green-400/10 hover:border-white hover:shadow-[0_0_20px_rgba(74,222,128,0.5)] hover:scale-105">
-            Learn More
-          </button>
+            <p className="text-gray-400 mt-3 mb-6 transition-colors group-hover:text-gray-200">
+              {card.description}
+            </p>
+
+            <button className="
+                  relative 
+                  px-8 py-2 
+                  text-white text-xl font-medium 
+                  rounded-xl
+                  border border-emerald-500/30 
+                  shadow-[0_0_15px_rgba(16,185,129,0.1)]
+                  transition-all duration-300 ease-in-out
+                  hover:border-emerald-400 
+                  hover:shadow-[0_0_25px_rgba(52,211,153,0.4)]
+                  hover:scale-105
+                  active:scale-95
+                  before:absolute before:inset-0 before:rounded-xl 
+                  before:bg-gradient-to-b before:from-white/10 before:to-transparent 
+                  before:pointer-events-none
+                  bg-gradient-to-t from-green-400/10 to-green-400/40
+                ">
+              Learn More
+            </button>
+          </div>
         </div>
-      </div>
-
-      <div className="group relative p-[2px] rounded-2xl 
-        bg-gradient-to-r from-transparent to-transparent 
-        hover:from-green-400 hover:to-emerald-500
-        mx-4
-        transition-all duration-500 w-80">
-
-        <div className="flex flex-col items-center text-center p-8 rounded-2xl
-          bg-gradient-to-t from-slate-900/10 to-slate-900/95
-          transition-all duration-500
-          transform-gpu
-          group-hover:rotate-1
-          group-hover:scale-105
-          group-hover:-translate-y-2
-          group-hover:shadow-[0_0_40px_rgba(74,222,128,0.3)]"
-        >
-          <Network  className='w-16 h-16 text-green-400' />
-          <h1 className="text-xl font-semibold text-white">
-            IT Consultancy
-          </h1>
-
-          <p className="text-gray-300 mt-2">
-            Technology consulting for digital transformation.
-          </p>
-
-          <button className="mt-8 text-lg px-6 py-1 border-2 transition-all duration-300 rounded-lg border-green-400 text-white bg-gradient-to-t from-green-400/10 to-green-400/40 hover:bg-green-400/10 hover:border-white hover:shadow-[0_0_20px_rgba(74,222,128,0.5)] hover:scale-105">
-            Learn More
-          </button>
-        </div>
-      </div>
-
-      <div className="group relative p-[2px] rounded-2xl 
-        bg-gradient-to-r from-transparent to-transparent 
-        hover:from-green-400 hover:to-emerald-500
-        mx-4
-        transition-all duration-500 w-80">
-
-        <div className="flex flex-col items-center text-center p-8 rounded-2xl
-          bg-gradient-to-t from-slate-900/10 to-slate-900/95
-          transition-all duration-500
-          transform-gpu
-          group-hover:rotate-1
-          group-hover:scale-105
-          group-hover:-translate-y-2
-          group-hover:shadow-[0_0_40px_rgba(74,222,128,0.3)]"
-        >
-          <Cog className='w-16 h-16 text-green-400' />
-          <h1 className="text-xl font-semibold text-white">
-            Business Automation
-          </h1>
-
-          <p className="text-gray-300 mt-2">
-            Streamline operations through advanced automation solutions.
-          </p>
-
-          <button className="mt-8 text-lg px-6 py-1 border-2 transition-all duration-300 rounded-lg border-green-400 text-white bg-gradient-to-t from-green-400/10 to-green-400/40 hover:bg-green-400/10 hover:border-white hover:shadow-[0_0_20px_rgba(74,222,128,0.5)] hover:scale-105">
-            Learn More
-          </button>
-        </div>
-      </div>
-
-
+      ))}
     </div>
   )
 }
 
-export default Solutionscard
+export default SolutionsCard

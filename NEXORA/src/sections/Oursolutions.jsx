@@ -9,7 +9,23 @@ const Oursolutions = () => {
             <div className='flex flex-col items-center text-[30px] text-center'>
                 <h1>Start Using Nexora to Scale and </h1>
                 <h1>Automate Your Business</h1>
-                <button className="flex mt-8 text-lg px-6 py-1 border-2 transition-all duration-300 rounded-lg border-green-400 text-white bg-gradient-to-t from-green-400/10 to-green-400/40  hover:bg-green-400/10  hover:text-white hover:border-white  hover:shadow-[0_0_20px_rgba(74,222,128,0.5)] hover:scale-105 ">
+                <button className="
+                    relative 
+                    px-8 py-2 
+                    text-white text-xl font-medium 
+                    rounded-xl
+                    border border-emerald-500/30 
+                    shadow-[0_0_15px_rgba(16,185,129,0.1)]
+                    transition-all duration-300 ease-in-out
+                    hover:border-emerald-400 
+                    hover:shadow-[0_0_25px_rgba(52,211,153,0.4)]
+                    hover:scale-105
+                    active:scale-95
+                    before:absolute before:inset-0 before:rounded-xl 
+                    before:bg-gradient-to-b before:from-white/10 before:to-transparent 
+                    before:pointer-events-none
+                    bg-gradient-to-t from-green-400/10 to-green-400/40
+                    ">
                     Get Started
                 </button>
             </div>
