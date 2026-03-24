@@ -8,7 +8,7 @@ export default function App() {
 
       {/* Galaxy Container - Constant in the background */}
       <div className='fixed top-0 left-0 w-full h-full -z-10 bg-black'>
-        <ConnectedDotsBackground />
+        {/* <ConnectedDotsBackground /> */}
 
         {/* Lines */}
         <div>
@@ -62,7 +62,7 @@ export default function App() {
       </div>
 
       {/* Page content - placed here and will be above the galaxy */}
-      <main className="relative z-10 text-white min-h-[250vh]">
+      <main className="relative text-white pb-30">
         <Home />
       </main>
 

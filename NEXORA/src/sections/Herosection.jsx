@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 const Herosection = () => {
 
     return (
-        <div className='flex items-center justify-center mb-30'>
+        <div className='flex items-center justify-center mb-30 '>
             {/* left side */}
             <div className='mr-14'>
                 <div className='px-6 pb-6'>
