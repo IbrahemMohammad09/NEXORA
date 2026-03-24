@@ -70,7 +70,7 @@ const Navbar = () => {
                     transition-all duration-300 ease-in-out
                     hover:border-emerald-400 
                     hover:shadow-[0_0_25px_rgba(52,211,153,0.4)]
-                    hover:scale-105
+                    
                     active:scale-95
                     before:absolute before:inset-0 before:rounded-xl 
                     before:bg-gradient-to-b before:from-white/10 before:to-transparent 
