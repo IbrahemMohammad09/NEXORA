@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { ChevronDown, Monitor, Settings, Briefcase } from "lucide-react";
 import logo from '../assets/logo.png'
 
@@ -6,6 +6,8 @@ const Navbar = () => {
 
     const [isNavMobile, setIsNavMobile] = useState(false);
     const [drowpdownMenuMobile, setdrowpdownMenuMobile] = useState(false)
+    const dropdownRef = useRef(null);
+
 
     useEffect(() => {
         const media = window.matchMedia("(max-width: 768px)");
@@ -18,6 +20,20 @@ const Navbar = () => {
 
         return () => media.removeEventListener("change", listener);
     }, []);
+
+    useEffect(() => {
+        const handleClickOutside = () =>{   
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setdrowpdownMenuMobile(false);
+            }
+        }
+        document.addEventListener('mousedown' , handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown' , handleClickOutside);
+        }
+        
+    } ,[dropdownRef])
 
     return (
         <nav className=''>
@@ -100,25 +116,17 @@ const Navbar = () => {
 
             {/* Navigation Buttons mobile */}
             {isNavMobile ?
-                <div className="flex gap-4">
+                <div className="flex items-center justify-center gap-4">
                     {/* Solutions Dropdown */}
-                    <div className="relative cursor-pointer text-amber-50/80 hover:text-amber-50    transition-all duration-300 group">
+                    <div ref={dropdownRef} className="relative cursor-pointer text-amber-50/80 hover:text-amber-50 transition-all duration-300 group">
                         <div onClick={()=>setdrowpdownMenuMobile(!drowpdownMenuMobile)} className="flex items-center">
                             Solutions
-                            <ChevronDown className="px-1 transition-transform duration-300 group-hover:rotate-180" />
+                            <ChevronDown className={`px-1 transition-transform duration-300 ${drowpdownMenuMobile ? 'rotate-180' : ''}`} />
                         </div>
-                        <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-green-400 transition-all duration-300 group-hover:w-full"></span>
+                        <span className={`absolute -bottom-1 left-0 h-[1px] bg-green-400 transition-all duration-300 ${drowpdownMenuMobile ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                         {/* Dropdown Menu */}
                         {drowpdownMenuMobile ?
-                        <div className="
-                            absolute top-full left-0 mt-2 w-60 
-                            bg-slate-900/95 backdrop-blur-md 
-                            border border-white/10 rounded-xl p-2 shadow-2x
-                            
-                            visible opacity-100 translate-y-0
-                            transition-all duration-300 z-50
-                            ">
-                            
+                            <div className="absolute top-full left-0 mt-2 w-60 bg-slate-900/95 backdrop-blur-md border border-white/10 rounded-xl p-2 shadow-2xl z-50 transition-all duration-300">
                                 <ul className="space-y-1">
                                     <li className="flex px-4 py-2 hover:bg-green-400/20 hover:text-green-400 rounded-lg transition-colors duration-200">
                                         <Monitor className='mr-1' /> Software Development
