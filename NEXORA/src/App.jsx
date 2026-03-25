@@ -8,7 +8,7 @@ export default function App() {
 
       {/* Galaxy Container - Constant in the background */}
       <div className='fixed top-0 left-0 w-full h-full -z-10 bg-black'>
-        {/* <ConnectedDotsBackground /> */}
+        <ConnectedDotsBackground />
 
         {/* Lines */}
         <div>

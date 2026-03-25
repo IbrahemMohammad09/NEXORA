@@ -3,12 +3,32 @@ import Solutionscard from '../component/solutionsCard'
 
 const Oursolutions = () => {
     return (
-        <div className='flex flex-col items-center justify-center'>
-            <h1 className='text-[30px] mb-8'>Our Solutions</h1>
-            <Solutionscard />
-            <div className='flex flex-col items-center text-[30px] text-center'>
-                <h1>Start Using Nexora to Scale and </h1>
-                <h1>Automate Your Business</h1>
+        /* Added w-full and overflow-hidden to prevent horizontal scroll */
+        <div className='flex flex-col items-center justify-center w-full overflow-hidden'>
+            
+            {/* Section Title */}
+            <h1 className='text-[28px] md:text-[35px] mb-12 font-semibold text-white'>
+                Our Solutions
+            </h1>
+
+            {/* Section Cards Wrapper */}
+            <div className='w-full flex justify-center'>
+                <Solutionscard />
+            </div>
+
+            {/* Section Description & CTA */}
+            <div className='flex flex-col items-center px-6 mt-10 text-center max-w-4xl'>
+                {/* Using leading-tight to fix line height 
+                    and responsive text sizes to prevent overflow 
+                */}
+                <h2 className='text-[24px] md:text-[40px] leading-tight text-white'>
+                    Start Using Nexora to Scale and 
+                </h2>
+                <h2 className='text-[24px] md:text-[40px] leading-tight mb-8 text-white'>
+                    Automate Your Business
+                </h2>
+
+                {/* CTA Button */}
                 <button className="
                     relative 
                     px-8 py-2 
@@ -25,7 +45,7 @@ const Oursolutions = () => {
                     before:bg-gradient-to-b before:from-white/10 before:to-transparent 
                     before:pointer-events-none
                     bg-gradient-to-t from-green-400/10 to-green-400/40
-                    ">
+                ">
                     Get Started
                 </button>
             </div>
