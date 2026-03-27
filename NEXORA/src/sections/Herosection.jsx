@@ -3,7 +3,7 @@ import logo from '../assets/logo.png'
 
 const Herosection = () => {
     return (
-        <div className='flex flex-col-reverse md:flex-row items-center justify-center overflow-x-hidden mb-30 mt-5'>
+        <div className='flex flex-col-reverse md:flex-row items-center justify-center  mb-30 mt-5'>
             
             {/* Left side */}
             <div className='md:mr-14'>
