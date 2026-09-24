@@ -2,7 +2,7 @@ name: Deploy NEXORA to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # أو master حسب اسم الفرع الرئيسي عندك
+    branches: [ main ] # أو master حسب اسم الفرع الرئيسي لديك
 
 permissions:
   contents: write
