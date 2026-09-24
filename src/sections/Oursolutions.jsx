@@ -1,5 +1,5 @@
 import React from 'react'
-import Solutionscard from '../component/SolutionsCard'
+import Solutionscard from '../component/Solutionscard'
 
 const Oursolutions = () => {
     return (
